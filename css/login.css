@@ -493,7 +493,7 @@ iframe {
   }
 }
 
-@media (max-width: 450px) {
+@media (max-width: 520px) {
   .container-login100{
     padding: 0px;
   }
