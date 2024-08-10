@@ -473,7 +473,7 @@ display-flex, .form-flex, .form-row, .add-info-link {
       }
     }
 
-    @media screen and (max-width: 425px) {
+    @media screen and (max-width: 520px) {
       .wrap-login100{
         padding: 20px;
       }
@@ -498,7 +498,7 @@ display-flex, .form-flex, .form-row, .add-info-link {
       }
     }
 
-    @media screen and (max-width: 425px) {
+    @media screen and (max-width: 320px) {
       .registrationForm{
         padding: 0px;
       }
