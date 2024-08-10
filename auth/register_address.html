@@ -1,71 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Address Form</title>
-    <!-- Bootstrap CSS -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register Address</title>
     <link
-    rel="stylesheet"
-    href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-  />
-</head>
-<body>
-    <div class="container">
-        <div class="card p-4 m-4">
-            <div class="card-body">
-                <h2 class="card-title text-center m-4">Address Details</h2>
-                <form>
-                  <div class="row">
-                    <div class="col-md-6">
-                      <div class="form-group">
-                        <label for="addrType">Address Type</label>
-                        <input type="text" class="form-control" id="addrType" placeholder="e.g Home, Work, Others etc.">
-                     </div>
-                     <div class="form-group">
-                        <label for="buildingName">Building Name</label>
-                        <input type="text" class="form-control" id="buildingName" placeholder="Enter building name">
-                     </div>
-                     <div class="form-group">
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <link rel="icon" type="image/png" href="../images/icons/favicon.ico"/>
+    <link rel="stylesheet" href="../css/register_basic.css"/>
+    <link rel="stylesheet" href="../vendor/jquery-ui/jquery-ui.min.css">
+  </head>
+  <body>
+    <div class="container-register">
+      <div class="wrap-login100">   
+        <form method="POST" id="registrationForm" class="registrationForm" action="{{ route('do_signup') }}">
+          <div style="padding-bottom: 20px;margin-bottom: 20px;font-family: 'Poppins-Medium';">
+            <h3  class="main_heading">Primary Address</h3>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="addrType">Address Type</label>
+              <input type="text" class="form-input" id="addrType" placeholder="e.g Home, Work, Others etc.">
+           </div>
+           <div class="form-group">
+            <label for="buildingName">Building Name</label>
+            <input type="text" class="form-input" id="buildingName" placeholder="Enter building name">
+         </div>
+          </div>
+          <div class="form-row">
+              <div class="form-group">
                       <label for="houseNumber">House Number</label>
-                      <input type="text" class="form-control" id="houseNumber" placeholder="Enter House Number">
-                     </div>
-                    </div>
-                    <div class="col-md-6">
-                      <div class="form-group">
-                        <label for="streetName">Street Name</label>
-                        <input type="text" class="form-control" id="streetName" placeholder="Enter street name">
-                     </div>
-                        <div class="form-group">
-                          <label for="landmark">Landmark</label>
-                          <input type="text" class="form-control" id="landmark" placeholder="Enter landmark">
-                      </div>
-                      <div class="form-group">
-                          <label for="pinCode">Pin Code</label>
-                          <input type="text" class="form-control" id="pinCode" placeholder="Enter pin code">
-                      </div>
-                    </div>
-                    <div class="col-md-6">
-                      <div class="form-group">
-                        <label for="state">State</label>
-                        <input type="text" class="form-control" id="state" placeholder="Enter state">
-                      </div>
-                    </div>
-                    <div class="col-md-6">
-                      <div class="form-group">
-                        <label for="city">City</label>
-                        <input type="text" class="form-control" id="city" placeholder="Enter city">
-                      </div>
-                    </div>
-                 
-                  <button type="submit" class="btn btn-primary btn-block">Submit</button>
-                </form>
+                      <input type="text" class="form-input" id="houseNumber" placeholder="Enter House Number">
+                </div>
+                <div class="form-group">
+                      <label for="streetName">Street Name</label>
+                      <input type="text" class="form-input" id="streetName" placeholder="Enter street name">
+                   </div>
+                   <div class="form-group">
+                    <label for="pinCode">Pin Code</label>
+                    <input type="text" class="form-input" id="pinCode" placeholder="Enter pin code">
+                </div>
+                <div class="form-group">
+                  <label for="city">City</label>
+                  <input type="text" class="form-input" id="city" placeholder="Enter city">
+                </div>
+          </div>
+          
+            <div class="form-group">
+              <label for="state">State</label>
+              <input type="text" class="form-input" id="state" placeholder="Enter state">
             </div>
-        </div>
+          
+          <div class="form-group"> 
+              <input type="submit" name="submit" id="submit" class="form-submit" value="Add Address"/>
+          </div>
+        </form>
+      </div>
     </div>
+
     <!-- Bootstrap core JavaScript -->
+
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-</body>
+    <script src="../js/register_basic.js"></script>
+    <script src="../vendor/jquery-validation/dist/additional-methods.min.js"></script>
+    <script src="../vendor/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="../vendor/jquery-validation/dist/additional-methods.min.js"></script>
+  </body>
 </html>

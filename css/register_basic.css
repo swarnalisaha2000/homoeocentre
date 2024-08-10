@@ -37,6 +37,15 @@ display-flex, .form-flex, .form-row, .add-info-link {
     list-style-type: none;
     margin: 0;
     padding: 0; }
+
+    .main_heading{
+      text-align: center;
+      color: #3FB2C6;
+    }
+
+    .main_section{
+      padding-bottom: 20px;margin-bottom: 20px;font-family: 'Poppins-Medium';
+    }
   
 .container-register {
     width: 100%;  
@@ -204,7 +213,12 @@ display-flex, .form-flex, .form-row, .add-info-link {
     -o-border-radius: 5px;
     -ms-border-radius: 5px;
     background-color: #ebebeb; }
-  
+
+    input[type="date"]:not(.has-value):before{
+      color: lightgray;
+      content: attr(placeholder);
+    }
+    
   label, input {
     display: block;
     width: 100%; }
@@ -215,7 +229,8 @@ display-flex, .form-flex, .form-row, .add-info-link {
     margin-bottom: 3px; 
     font-family: 'Poppins-Regular';
     font-weight: 700;
-    letter-spacing: 0.05rem;}
+    letter-spacing: 0.05rem;
+    font-size: 14px;}
   
   input {
     border: 1px solid #ebebeb;
@@ -226,8 +241,9 @@ display-flex, .form-flex, .form-row, .add-info-link {
     -ms-border-radius: 5px;
     box-sizing: border-box;
     padding: 15px 20px;
-    font-size: 14px;
+    font-size: 12px;
     font-weight: bold;
+    letter-spacing: 0.05rem;
     font-family: 'Poppins-Regular'; }
     input:focus {
       border: 1px solid #32AB93; }
@@ -315,7 +331,8 @@ display-flex, .form-flex, .form-row, .add-info-link {
   
   .form-group, .form-radio {
     margin-bottom: 23px;
-    position: relative; }
+    position: relative;
+    width: 90%; }
   
   .form-icon {
     position: relative; }
@@ -443,9 +460,50 @@ display-flex, .form-flex, .form-row, .add-info-link {
     z-index: 9; }
   
   @media screen and (max-width: 768px) {
-    .container {
-      width: calc( 100% - 30px);
-      max-width: 100%; } }
-  
-  /*# sourceMappingURL=style.css.map */
-  
+      .container {
+        width: calc( 100% - 30px);
+        max-width: 100%; } 
+
+      .wrap-login100{
+        padding: 40px;
+        margin: 40px;
+      }
+      .registrationForm{
+        padding: 30px 40px 0px 40px;
+      }
+    }
+
+    @media screen and (max-width: 425px) {
+      .wrap-login100{
+        padding: 20px;
+      }
+      .container-register{
+        padding: 0px;
+      }
+      .registrationForm{
+        padding: 20px 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .form-row{
+        flex-direction: column;
+        width: 100%;
+      }
+      .form-row .form-group, .form-row .form-radio{
+        width: 100%;
+      }
+      .wrap-login100{
+        margin: 30px;
+      }
+    }
+
+    @media screen and (max-width: 425px) {
+      .registrationForm{
+        padding: 0px;
+      }
+      .main_heading{
+        font-size: 22px;
+        padding: 20px;
+      }
+    }
