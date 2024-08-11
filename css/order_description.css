@@ -263,3 +263,14 @@ input[type="file"]::file-selector-button:active {
   border: 1px solid #c9c9c9;
   border-radius: 5px;
 }
+
+.text-center{
+  text-transform: uppercase;
+  font-weight: 800;
+  margin-bottom: 3px; 
+  font-family: 'Poppins-Regular';
+  font-weight: 500;
+  letter-spacing: 0.05rem;
+  font-size: 20px;
+  padding: 5px;
+}
