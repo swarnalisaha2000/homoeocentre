@@ -6,31 +6,49 @@
     <title>Medicine Order Form</title>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/order_items.css">
 </head>
 <body>
     <div class="container justify-content-center my-5">
-        <h2 class="text-center mb-4">Medicine Order Form</h2>
+        <h2 class="text-center mb-4 main_heading">Medicine Order Form</h2>
         <form id="orderForm">
             <div class="form-row">
                 <div class="form-group col-md-3">
-                    <label for="medicineName1">Medicine Name</label>
-                    <input type="text" class="form-control" id="medicineName1" name="medicineName[]" value="Arnica Mont">
+                    <label for="medicineName1" >Medicine Name</label>
+                    <input type="text"   id="medicineName1" name="medicineName[]" value="Arnica Mont" >
                 </div>
                 <div class="form-group col-md-2">
                     <label for="power1">Power</label>
-                    <input type="text" class="form-control" id="power1" name="power[]" value="30">
+                    <!--<input type="select"   id="power1" name="power[]" value="30">-->
+                    <select   name="power[]" id="power1" >
+                        <option value="6">6</option>
+                        <option value="30">30</option>
+                        <option value="200">200</option>
+                        <option value="1M">1M/1000</option>
+                        <option value="10M">10M</option>
+                        <option value="50M">50M</option>
+                        <option value="CM">CM</option>
+                        <option value="Q">Q</option>
+                    </select>
+                    
                 </div>
                 <div class="form-group col-md-2">
                     <label for="medicineType1">Medicine Type</label>
-                    <input type="text" class="form-control" id="medicineType1" name="medicineType[]" value="Globules">
+                    <select   id="medicineType1" name="medicineType[]" >
+                        <option value="Distilled water">Distilled water</option>
+                        <option value="Sugar Of Milk/ Saclac">Sugar Of Milk/ Saclac</option>
+                        <option value="Globules">Globules</option>
+                        <option value="Liquid">Liquid</option>
+                    </select>
+                    
                 </div>
                 <div class="form-group col-md-2">
                     <label for="bottleSize1">Bottle Size</label>
-                    <input type="text" class="form-control" id="bottleSize1" name="bottleSize[]" value="5ml">
+                    <input type="text"   id="bottleSize1" name="bottleSize[]" value="5ml" >
                 </div>
-                <div class="form-group col-md-2">
-                    <label for="quantity1">Quantity</label>
-                    <input type="number" class="form-control" id="quantity1" name="quantity[]" value="2">
+                <div class="form-group col-md-2">       
+                    <label for="quantity1" id="quantityLabel">Quantity</label>
+                    <input type="number"   id="quantity1" name="quantity[]" value="2">
                 </div>
                 <div class="form-group col-md-1 d-flex align-items-end">
                     <button type="button" class="btn btn-success add-row">+</button>
@@ -41,7 +59,7 @@
             <div id="newRows"></div>
             <div class="form-row text-center">
                 <div class="form-group text-center col-md-2">
-                    <button type="submit" class="btn btn-primary btn-block">Submit</button>
+                    <button type="submit" class=" btn-block submit-medicine">Submit</button>
                 </div>
             </div>
         </form>
@@ -60,28 +78,50 @@
                 <div class="form-row">
                     <div class="form-group col-md-3">
                         <label for="medicineName${rowCount}">Medicine Name</label>
-                        <input type="text" class="form-control" id="medicineName${rowCount}" name="medicineName[]" placeholder="Enter medicine name">
+                        <input type="text"   id="medicineName${rowCount}" name="medicineName[]" placeholder="Enter medicine name">
                     </div>
                     <div class="form-group col-md-2">
                         <label for="power${rowCount}">Power</label>
-                        <input type="text" class="form-control" id="power${rowCount}" name="power[]" placeholder="Enter power">
+                        
+                    <select   name="power[]" id="power${rowCount}">
+                        <option value="6">6</option>
+                        <option value="30">30</option>
+                        <option value="200">200</option>
+                        <option value="1M">1M/1000</option>
+                        <option value="10M">10M</option>
+                        <option value="50M">50M</option>
+                        <option value="CM">CM</option>
+                        <option value="Q">Q</option>
+                    </select>
                     </div>
                     <div class="form-group col-md-2">
-                        <label for="medicineType${rowCount}">Medicine Type</label>
-                        <input type="text" class="form-control" id="medicineType${rowCount}" name="medicineType[]" placeholder="Enter medicine type">
+                        <label for="medicineType${rowCount}">Medium</label>
+                        <input type="text"   id="medicineType${rowCount}" name="medicineType[]" placeholder="Enter medicine type">
                     </div>
                     <div class="form-group col-md-2">
                         <label for="bottleSize${rowCount}">Bottle Size</label>
-                        <input type="text" class="form-control" id="bottleSize${rowCount}" name="bottleSize[]" placeholder="Enter bottle size">
+                        <input type="text"   id="bottleSize${rowCount}" name="bottleSize[]" placeholder="Enter bottle size">
                     </div>
                     <div class="form-group col-md-2">
                         <label for="quantity${rowCount}">Quantity</label>
-                        <input type="number" class="form-control" id="quantity${rowCount}" name="quantity[]" placeholder="Quantity">
+                        <input type="number"   id="quantity${rowCount}" name="quantity[]" placeholder="Quantity">
                     </div>
                 </div>`;
                 $('#newRows').append(newRow);
             });
         });
     </script>
+    <script>
+        document.getElementById('medicineType1').addEventListener('change', function() {
+            var label = document.getElementById('quantityLabel');
+            var selectedValue = this.value;
+        
+            if (selectedValue === 'Distilled water' || selectedValue === 'Sugar Of Milk/ Saclac') {
+                label.textContent = 'Dosage';
+            } else {
+                label.textContent = 'Quantity';
+            }
+        });
+        </script>
 </body>
 </html>
