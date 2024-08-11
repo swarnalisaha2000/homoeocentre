@@ -239,3 +239,27 @@ input[type="file"]::file-selector-button:hover {
 input[type="file"]::file-selector-button:active {
   background-color: #e5e7eb;
 }
+
+  
+.card-input-element {
+  display: none;
+}
+
+.card-input {
+  margin: 10px;
+  padding: 00px;
+}
+
+.card-input:hover {
+  cursor: pointer;
+}
+
+.card-input-element:checked + .card-input {
+   box-shadow: 0 0 1px 1px rgba(68,179,180,1);
+}
+
+.panel-heading{
+  padding: 20px;
+  border: 1px solid #c9c9c9;
+  border-radius: 5px;
+}
