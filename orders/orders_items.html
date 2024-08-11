@@ -10,6 +10,10 @@
 </head>
 <body>
     <div class="container justify-content-center my-5">
+        <div class="progress-bar__wrapper">
+            <label class="progress-bar__value" htmlFor="progress-bar"> </label>
+            <progress id="progress-bar" value="33.33" max="100"></progress>
+        </div>
         <h2 class="text-center mb-4 main_heading">Medicine Order Form</h2>
         <form id="orderForm">
             <div class="form-row">
@@ -116,6 +120,18 @@ $(document).ready(function() {
             </div>
         </div>`;
         $('#newRows').append(newRow);
+
+        // Attach event listener for the new row's medicine type dropdown
+        $('#medicineType' + rowCount).change(function() {
+            var label = $(this).closest('.form-row').find('label[for="quantity' + rowCount + '"]');
+            var selectedValue = $(this).val();
+        
+            if (selectedValue === 'Distilled water' || selectedValue === 'Sugar Of Milk/ Saclac') {
+                label.text('Dosage');
+            } else {
+                label.text('Quantity');
+            }
+        });
     });
 
     // Function to remove a row
