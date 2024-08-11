@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medicine Order Form</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/order_description.css">
+</head>
+<body>
+    <div class="container justify-content-center my-5">
+        <div class="progress-bar__wrapper">
+            <label class="progress-bar__value" htmlFor="progress-bar"> </label>
+            <progress id="progress-bar" value="66.66" max="100"></progress>
+        </div>
+        <form id="orderForm">
+            <div class="form-row">
+                <div class="form-group col-md-12">
+                    <label for="remarks">Review of W3Schools:</label>
+                    <textarea id="remarks" name="remarks" rows="6" cols="80" class="order_remarks">At w3schools.com you will learn how to make a website. They offer free tutorials in all web development technologies.</textarea>
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
