@@ -43,8 +43,8 @@
                     
                 </div>
                 <div class="form-group col-md-2">
-                    <label for="bottleSize1">Bottle Size</label>
-                    <input type="text"   id="bottleSize1" name="bottleSize[]" value="5ml" >
+                    <label for="bottleSize1">Bottle Size (ml)</label>
+                    <input type="text"   id="bottleSize1" name="bottleSize[]" value="5" >
                 </div>
                 <div class="form-group col-md-2">       
                     <label for="quantity1" id="quantityLabel">Quantity</label>
@@ -69,47 +69,61 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
-        $(document).ready(function() {
-            let rowCount = 1;
+$(document).ready(function() {
+    let rowCount = 1;
 
-            $('.add-row').click(function() {
-                rowCount++;
-                let newRow = `
-                <div class="form-row">
-                    <div class="form-group col-md-3">
-                        <label for="medicineName${rowCount}">Medicine Name</label>
-                        <input type="text"   id="medicineName${rowCount}" name="medicineName[]" placeholder="Enter medicine name">
-                    </div>
-                    <div class="form-group col-md-2">
-                        <label for="power${rowCount}">Power</label>
-                        
-                    <select   name="power[]" id="power${rowCount}">
-                        <option value="6">6</option>
-                        <option value="30">30</option>
-                        <option value="200">200</option>
-                        <option value="1M">1M/1000</option>
-                        <option value="10M">10M</option>
-                        <option value="50M">50M</option>
-                        <option value="CM">CM</option>
-                        <option value="Q">Q</option>
-                    </select>
-                    </div>
-                    <div class="form-group col-md-2">
-                        <label for="medicineType${rowCount}">Medium</label>
-                        <input type="text"   id="medicineType${rowCount}" name="medicineType[]" placeholder="Enter medicine type">
-                    </div>
-                    <div class="form-group col-md-2">
-                        <label for="bottleSize${rowCount}">Bottle Size</label>
-                        <input type="text"   id="bottleSize${rowCount}" name="bottleSize[]" placeholder="Enter bottle size">
-                    </div>
-                    <div class="form-group col-md-2">
-                        <label for="quantity${rowCount}">Quantity</label>
-                        <input type="number"   id="quantity${rowCount}" name="quantity[]" placeholder="Quantity">
-                    </div>
-                </div>`;
-                $('#newRows').append(newRow);
-            });
-        });
+    // Function to add a new row
+    $('.add-row').click(function() {
+        rowCount++;
+        let newRow = `
+        <div class="form-row">
+            <div class="form-group col-md-3">
+                <label for="medicineName${rowCount}">Medicine Name</label>
+                <input type="text" id="medicineName${rowCount}" name="medicineName[]" placeholder="Enter medicine name">
+            </div>
+            <div class="form-group col-md-2">
+                <label for="power${rowCount}">Power</label>
+                <select class="form-group" name="power[]" id="power${rowCount}">
+                    <option value="6">6</option>
+                    <option value="30">30</option>
+                    <option value="200">200</option>
+                    <option value="1M">1M/1000</option>
+                    <option value="10M">10M</option>
+                    <option value="50M">50M</option>
+                    <option value="CM">CM</option>
+                    <option value="Q">Q</option>
+                </select>
+            </div>
+            <div class="form-group col-md-2">
+                <label for="medicineType${rowCount}">Medicine Type</label>
+                <select id="medicineType${rowCount}" name="medicineType[]">
+                    <option value="Distilled water">Distilled water</option>
+                    <option value="Sugar Of Milk/ Saclac">Sugar Of Milk/ Saclac</option>
+                    <option value="Globules">Globules</option>
+                    <option value="Liquid">Liquid</option>
+                </select>
+            </div>
+            <div class="form-group col-md-2">
+                <label for="bottleSize${rowCount}">Bottle Size (ml)</label>
+                <input type="text" id="bottleSize${rowCount}" name="bottleSize[]" placeholder="Enter bottle size">
+            </div>
+            <div class="form-group col-md-2">
+                <label for="quantity${rowCount}">Quantity</label>
+                <input type="number" id="quantity${rowCount}" name="quantity[]" placeholder="Quantity">
+            </div>
+            <div class="form-group col-md-1 d-flex align-items-end">
+                <button type="button" class="btn btn-danger remove-row">-</button>
+            </div>
+        </div>`;
+        $('#newRows').append(newRow);
+    });
+
+    // Function to remove a row
+    $(document).on('click', '.remove-row', function() {
+        $(this).closest('.form-row').remove();
+    });
+});
+
     </script>
     <script>
         document.getElementById('medicineType1').addEventListener('change', function() {

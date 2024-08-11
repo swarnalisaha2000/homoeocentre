@@ -99,3 +99,17 @@ label{
     -moz-transition: all 0.4s;
     transition: all 0.4s;
 }
+
+.form-row{
+    margin-bottom: 20px;
+}
+
+.form-group{
+    margin-bottom: 0px;
+}
+
+@media (max-width: 992px) {
+    label{
+        font-size: 12px;
+    }
+}
